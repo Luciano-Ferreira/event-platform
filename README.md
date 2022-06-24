@@ -21,4 +21,4 @@ underfetching: qnd o backend retorna apenas o que o frontend precisa. Porém com
 
 Dicas:
 
-- Criar as variantes dos botões e componentizalas.
+- Criar as variantes dos botões e componentizalas. (interessante aplicar isso quando esse componente se repete mais do que duas vezes na aplicação)
