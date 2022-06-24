@@ -19,3 +19,6 @@ Mutations: Criar, deletar ou alterar dados.
 overfetching: qnd o backend retorna muitos dados alem do que o frontend precisa.
 underfetching: qnd o backend retorna apenas o que o frontend precisa. Porém com restAPI isso não acontece por que temos que especificar o id do professor ou da aula. E ai que gql se destaca. nos possibilitando fazer com que o front end diga ao back end o que iremos precisar exatamente de qual instancia.
 
+Dicas:
+
+- Criar as variantes dos botões e componentizalas.
