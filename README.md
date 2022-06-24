@@ -4,6 +4,8 @@
 - Vite
 - ReactJS
 - Typescript
+- [VimeJS](https://vimejs.com/getting-started/installation) (other alternative videojs)
+- react router dom (routing)
 
 
 Headless CMS(GraphCMS): Painel de admin. (dados fornecidos atraves de uma API rest ou gql).
@@ -22,3 +24,9 @@ underfetching: qnd o backend retorna apenas o que o frontend precisa. Porém com
 Dicas:
 
 - Criar as variantes dos botões e componentizalas. (interessante aplicar isso quando esse componente se repete mais do que duas vezes na aplicação)
+
+O react atualizou a algum tempo para versão 18 e a lib vimejs não suporta por causa da nova funcionalidade de streaming side rendering.
+então essas libs foram instalada com o --force
+
+
+
