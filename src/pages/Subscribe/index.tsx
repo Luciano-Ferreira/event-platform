@@ -9,9 +9,7 @@ type FormValues = {
 
 const CREATE_SUBSCRIBER_MUTATION = gql`
     mutation CreateSubscriber ($name: String!, $email: String!) {
-      createSubscriber(data: {name: $name email: $email}) {
-        id
-      }
+      createSubscriber(data: {name: $name, email: $email})
     }
   `;
 
@@ -19,19 +17,17 @@ export function Subscribe() {
 
   const { register, handleSubmit, formState: { errors } } = useForm<FormValues>();
   
-  const [ createSubscriber, { data } ] = useMutation(CREATE_SUBSCRIBER_MUTATION);
+  const [ createSubscriber ] = useMutation(CREATE_SUBSCRIBER_MUTATION);
 
 
-  const onSubmit: SubmitHandler<FormValues> = (data) => {
+  const onSubmit: SubmitHandler<FormValues> = ({ name, email }) => {
 
-    console.log(data)
     createSubscriber({
       variables: {
-        name: data.name,
-        email: data.email
+        name,
+        email
       }
     })
-    console.log(data)
   };
 
 
