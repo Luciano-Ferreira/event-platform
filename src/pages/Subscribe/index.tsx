@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql, useMutation } from '@apollo/client';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { Logo } from '../../components/Logo';
 
@@ -7,11 +7,33 @@ type FormValues = {
   email: string;
 }
 
+const CREATE_SUBSCRIBER_MUTATION = gql`
+    mutation CreateSubscriber ($name: String!, $email: String!) {
+      createSubscriber(data: {name: $name email: $email}) {
+        id
+      }
+    }
+  `;
+
 export function Subscribe() {
 
   const { register, handleSubmit, formState: { errors } } = useForm<FormValues>();
+  
+  const [ createSubscriber, { data } ] = useMutation(CREATE_SUBSCRIBER_MUTATION);
 
-  const onSubmit: SubmitHandler<FormValues> = (data) => console.log(data);
+
+  const onSubmit: SubmitHandler<FormValues> = (data) => {
+
+    console.log(data)
+    createSubscriber({
+      variables: {
+        name: data.name,
+        email: data.email
+      }
+    })
+    console.log(data)
+  };
+
 
   return (
     <div className='min-h-screen bg-blur bg-cover bg-no-repeat flex flex-col items-center'>
