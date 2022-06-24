@@ -3,7 +3,11 @@ import { CaretRight, DiscordLogo, FileArrowDown, Lightning } from 'phosphor-reac
 
 import '@vime/core/themes/default.css';
 
-export function Video() {
+interface Props {
+  lessonSlug: string;
+}
+
+export function Video({ lessonSlug }: Props) {
   return (
     <div className='flex-1'>
       <div className='bg-black flex justify-center'>
