@@ -7,6 +7,7 @@
 - [VimeJS](https://vimejs.com/getting-started/installation) (other alternative videojs)
 - react router dom (routing)
 - react-hook-form
+- classnames
 
 
 Headless CMS(GraphCMS): Painel de admin. (dados fornecidos atraves de uma API rest ou gql).

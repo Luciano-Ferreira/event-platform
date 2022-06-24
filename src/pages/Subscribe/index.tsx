@@ -1,5 +1,6 @@
 import { gql, useMutation } from '@apollo/client';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 import { Logo } from '../../components/Logo';
 
 type FormValues = {
@@ -14,15 +15,16 @@ const CREATE_SUBSCRIBER_MUTATION = gql`
   `;
 
 export function Subscribe() {
+  const navigate = useNavigate();
 
   const { register, handleSubmit, formState: { errors } } = useForm<FormValues>();
   
-  const [ createSubscriber ] = useMutation(CREATE_SUBSCRIBER_MUTATION);
+  const [ createSubscriber, { loading } ] = useMutation(CREATE_SUBSCRIBER_MUTATION);
 
 
-  const onSubmit: SubmitHandler<FormValues> = ({ name, email }) => {
+  const onSubmit: SubmitHandler<FormValues> = async ({ name, email }) => {
 
-    createSubscriber({
+    await createSubscriber({
       variables: {
         name,
         email
@@ -68,6 +70,7 @@ export function Subscribe() {
             <button
               type='submit'
               className='mt-4 bg-green-500 uppercase py-4 rounded font-bold text-sm hover:bg-green-700 transition-colors'
+              disabled={loading}
             >
               Garantir minha vaga
             </button>
