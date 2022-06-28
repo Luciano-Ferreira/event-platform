@@ -9,16 +9,6 @@
 Event platform developed during Rocketseat's Ignite 2
 
 
-
-## 🚀 About Me
-I'm a full stack developer javascript...
-
-
-## License
-
-[License MIT](https://github.com/Luciano-Ferreira/event-platform/blob/main/LICENSE)
-
-
 ## Tech Stack
 
 
@@ -33,7 +23,9 @@ I'm a full stack developer javascript...
 - **Graphql**
 - **Apollo Client**
 
+## Demo
 
+[Demo event-platform](https://event-platform-self-kappa.vercel.app/)
 
 ## Installation
 
@@ -65,3 +57,13 @@ yarn dev
 ## Authors
 
 - [@Luciano Silva](https://www.github.com/luciano-ferreira)
+
+
+
+## 🚀 About Me
+I'm a full stack developer javascript...
+
+
+## License
+
+[License MIT](https://github.com/Luciano-Ferreira/event-platform/blob/main/LICENSE)
