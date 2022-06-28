@@ -19,13 +19,21 @@ export function Subscribe() {
 
 
   const onSubmit: SubmitHandler<FormValues> = async ({ name, email }) => {
+    try {
+      await createSubscriber({
+        variables: {
+          name,
+          email
+        }
+      })
 
-    await createSubscriber({
-      variables: {
-        name,
-        email
-      }
-    })
+      navigate('/event')
+
+    } catch (err) {
+      console.error(err)
+
+
+    }
   };
 
 
@@ -54,7 +62,10 @@ export function Subscribe() {
               className='bg-gray-900 rounded px-5 h-14'
               type="text"
               placeholder='Seu nome completo'
-              {...register('name')}
+              {...register('name', { 
+                required: 'Nome obrigatorio',
+
+              })}
             />
             <input
               className='bg-gray-900 rounded px-5 h-14'
