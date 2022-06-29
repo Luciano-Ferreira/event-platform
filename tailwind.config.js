@@ -35,8 +35,18 @@ module.exports = {
           700: '#121214',
           900: '#09090a'
         }
-      }
+      },
+      screens: {
+        'tablet': '1200px',
+        '0xl': '1360px',
+        '1xl': '1440px',
+        '3xl': '1920px',
+        '4xl': '2560px',
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('tailwind-scrollbar'),
+  ],
 }
